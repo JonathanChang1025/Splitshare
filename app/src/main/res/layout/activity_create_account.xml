@@ -9,11 +9,10 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/logo"
         android:transitionName="logoTransition" />
 
@@ -22,14 +21,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:hint="Username">
+        android:layout_marginTop="4dp"
+        android:hint="Username"
+        android:transitionName="usernameTransition">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:transitionName="usernameTransition"/>
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,18 +36,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="32dp"
-        android:hint="Password">
+        android:layout_marginTop="4dp"
+        android:hint="Password"
+        android:transitionName="passwordTransition">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:transitionName="passwordTransition"/>
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -56,27 +55,11 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:elevation="50dp"
-        android:onClick="btn_login_clicked"
+        android:onClick="btn_register_clicked"
         android:padding="16dp"
-        android:text="LOGIN"
+        android:text="REGISTER"
         android:textColor="@color/colorAccent"
         android:transitionName="buttonTransition"/>
-
-    <Button
-        android:id="@+id/button_create"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@android:color/transparent"
-        android:elevation="0dp"
-        android:onClick="btn_create_clicked"
-        android:text="No account yet? Create one"
-        android:textAllCaps="false"
-        android:textColor="@color/colorLightGray"
-        android:textSize="16sp" />
 
 
 </LinearLayout>
