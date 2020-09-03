@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
@@ -22,13 +23,17 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="4dp"
-        android:hint="Username"
-        android:transitionName="usernameTransition">
+        android:hint="@string/username"
+        android:textColorHint="@color/colorLightGray"
+        android:transitionName="usernameTransition"
+        app:boxBackgroundColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorLightGray">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="@color/colorAccent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,14 +42,92 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="4dp"
-        android:hint="Password"
-        android:transitionName="passwordTransition">
+        android:hint="@string/password"
+        android:textColorHint="@color/colorLightGray"
+        android:transitionName="passwordTransition"
+        app:boxBackgroundColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorLightGray"
+        app:hintTextColor="@color/colorLightGray">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="@color/colorAccent" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="4dp"
+        android:hint="Email Address (optional)"
+        android:textColorHint="@color/colorLightGray"
+        app:boxBackgroundColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorLightGray"
+        app:hintTextColor="@color/colorLightGray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="4dp"
+        android:hint="Phone Number (optional)"
+        android:textColorHint="@color/colorLightGray"
+        app:boxBackgroundColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorLightGray"
+        app:hintTextColor="@color/colorLightGray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferred Currency: "
+            android:textColor="@color/colorLightGray"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:boxStrokeColor="@color/colorLightGray"
+            app:endIconTint="@color/colorLightGray"
+            app:hintTextColor="@color/colorLightGray">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="none"
+                android:padding="8dp"
+                android:textColor="@color/colorLightGray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_register"
@@ -59,7 +142,24 @@
         android:padding="16dp"
         android:text="REGISTER"
         android:textColor="@color/colorAccent"
-        android:transitionName="buttonTransition"/>
+        android:transitionName="submitTransition" />
+
+    <Button
+        android:id="@+id/button_signin"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:elevation="0dp"
+        android:onClick="btn_signin_clicked"
+        android:text="Already have an account? Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightGray"
+        android:textSize="16sp"
+        android:transitionName="reginTransition" />
 
 
 </LinearLayout>

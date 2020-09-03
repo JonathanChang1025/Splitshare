@@ -23,13 +23,19 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="8dp"
-        android:hint="Username">
+        android:hint="Username"
+        android:transitionName="usernameTransition"
+        android:textColorHint="@color/colorLightGray"
+        app:boxStrokeColor="@color/colorLightGray"
+        app:hintTextColor="@color/colorLightGray"
+        app:boxBackgroundColor="@color/colorPrimary"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:transitionName="usernameTransition"/>
+            android:textColor="@color/colorAccent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,13 +44,19 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="32dp"
-        android:hint="Password">
+        android:hint="Password"
+        android:transitionName="passwordTransition"
+        android:textColorHint="@color/colorLightGray"
+        app:boxStrokeColor="@color/colorLightGray"
+        app:hintTextColor="@color/colorLightGray"
+        app:boxBackgroundColor="@color/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:transitionName="passwordTransition"/>
+            android:textColor="@color/colorAccent"
+            android:backgroundTint="@color/colorPrimary"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -53,14 +65,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="128dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:elevation="50dp"
         android:onClick="btn_login_clicked"
         android:padding="16dp"
         android:text="LOGIN"
         android:textColor="@color/colorAccent"
-        android:transitionName="buttonTransition"/>
+        android:transitionName="submitTransition"/>
 
     <Button
         android:id="@+id/button_create"
@@ -76,7 +88,8 @@
         android:text="No account yet? Create one"
         android:textAllCaps="false"
         android:textColor="@color/colorLightGray"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:transitionName="reginTransition"/>
 
 
 </LinearLayout>
