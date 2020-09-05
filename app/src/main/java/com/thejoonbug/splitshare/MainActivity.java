@@ -59,24 +59,15 @@ public class MainActivity extends AppCompatActivity {
         til_username.clearFocus();
         til_password.clearFocus();
     }
-
-    private boolean validate_string_length(String input) {
-        if (input.length() >= MINIMUM_LOGIN_LENGTH) {
-            return true;
-        } else {
-            Toast.makeText(this, String.format("Username/Password should be at least %2d characters", MINIMUM_LOGIN_LENGTH), Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
-    }
     
     public void btn_login_clicked(View v) {
+        String action = "login";
+
         String username = til_username.getEditText().getText().toString();
         String password = til_password.getEditText().getText().toString();
 
-        if (validate_string_length(username) && validate_string_length(password)) {
-            Toast.makeText(this, username + " " + password, Toast.LENGTH_SHORT).show();
-        }
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(action, username, password);
     }
 
     public void btn_create_clicked(View v) {
